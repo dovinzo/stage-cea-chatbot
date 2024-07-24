@@ -1,0 +1,6 @@
+.ipynb_checkpoints
+models/*
+wandb/*
+data/forums/*
+data/json/*
+data/jsonl/*
