@@ -13,7 +13,7 @@ Description:
 Options:
     --help
         Affiche cette aide et quitte.
-
+        
     --forums_numbers
         La liste des numéros des forums qu'on considère.
         Exemple: 9,11
@@ -66,34 +66,34 @@ def get_arguments():
     
     Sortie:
         args (argparse.Namespace): Les arguments donnés avant l'éxécution du script
-
+    
     Exemple:
         args = get_arguments()
     """
-
+    
     # Créer le parseur
     parser = argparse.ArgumentParser(add_help=False)
-
+    
     # Ajouter l'option --help
     parser.add_argument('--help', action='store_true')
-
+    
     # Ajouter l'option --forums_numbers
     parser.add_argument('--forums_numbers', type=parse_numbers_list)
-
+    
     # Ajouter l'option --json_file_path_name
     parser.add_argument('--json_file_path_name', type=str)
-
+    
     # Ajouter l'option --append
     parser.add_argument('--append', action='store_true')
-
+    
     # Ajouter l'argument forums_directory_path_name
     parser.add_argument('--forums_directory_path_name', type=str)
-
+    
     # Analyser les arguments
     args = parser.parse_args()
-
+    
     return args
-
+    
 def main():
     """
     main - Fonction principale orchestrant les tâches à effectuer
@@ -101,12 +101,13 @@ def main():
 
     # Récupérer les arguments
     args = get_arguments()
-
+    
     #print(f"--help:\n\t{args.help}\n")
     #print(f"--forums_numbers:\n\t{args.forums_numbers}\n")
     #print(f"--json_file_path_name:\n\t{args.json_file_path_name}\n")
     #print(f"--forums_directory_path_name:\n\t{args.forums_directory_path_name}")
-
+    
+    
     # ==================== Gestion des arguments ====================
     if args.help:
         print_help()
@@ -117,7 +118,7 @@ def main():
     if args.forums_directory_path_name == None:
         print("Erreur: L'argument --forums_directory_path_name est obligatoire") # TODO : À MODIFIER
         sys.exit(0)
-
+    
     summarizer = pipeline("summarization")
 
     # Récupérer les données des forums

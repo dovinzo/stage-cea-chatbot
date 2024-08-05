@@ -2,3 +2,4 @@
 models/
 wandb/
 data/
+**/__pycache__/
