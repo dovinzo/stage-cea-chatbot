@@ -1,6 +1,7 @@
 .ipynb_checkpoints
 models/
 wandb/
-data/
+data/forums/
+data/json/
 **/__pycache__/
 brouillon.txt

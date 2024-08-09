@@ -1,0 +1,11 @@
+{"input": "I am trying to run a SALOME python script. If I try to run in the terminal, it won't find SALOME. If I try to run in SALOME, it won't prompt me for input via the console. How do I run a SALOME python script?", "output": "To run a SALOME python script, in a terminal, type: salome -t --pinter script.py."}
+
+{"input": "I have installed Salome 9.7.0 onto Ubuntu 20.04 using package specific to my OS. An issue comes up when I try to use some of the binaries with  errorr: can not load library libOpenGL.so.0", "output": "In a terminal, install apt-file and search for package which contains the libOpenGL.so file"}
+
+{"input": "I have the following error when launching SALOME: Can't find a free port to launch omniNames, how can I fix it?", "output": "You need to delete residual files named .omniORB.cfg and .salome_PortManager.cfg which hold OmniORB informations"}
+
+{"input": "I am trying to get Salome 9.7 running on Debian 11 (Bullseye). I get: /usr/bin/env: 'python': No such file or directory", "output": "you need to install python3-is-python"}
+
+{"input": "I am getting error: Can't find a free port to launch omniNames, what do I need to install?", "output": "Install net-tools."}
+
+{"input": "I would like to know if these is a python function for getting a list of all the submesh of a mesh object. A work around is to get the submesh order with the method \"GetMeshOrder\" but the returned list is empty when there is no comflit between submeshes. I read the SMESH Python doc without finding a function for my need.","output":"You can find sub-meshes by iterating all sub-object of your mesh in the study tree. Here is the code doing it:\nso = salome.myStudy.FindObjectByPath(\"/Mesh/__NAME_OF_YOUR_MESH___\")\n if so:\n    it = salome.myStudy.NewChildIterator( so )\n    it.InitEx(True)\n    while it.More():\n        so = it.Value()\n        it.Next()\n        obj = so.GetObject()\n        if isinstance( obj, SMESH._objref_SMESH_subMesh):\n            print ( so.GetName())"}
