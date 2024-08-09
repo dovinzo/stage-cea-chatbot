@@ -3,3 +3,4 @@ models/
 wandb/
 data/
 **/__pycache__/
+brouillon.txt
